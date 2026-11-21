@@ -4,7 +4,7 @@ Let $d\ge5$ be a positive real quadratic fundamental discriminant. For the field
 
 $$
 P(x)=\prod_{N\mathfrak p\le x}(1-1/N\mathfrak p)^{-1},\qquad
-S_d=\inf\{x\ge2:P(x)<e^{\gamma_E}\kappa\log x\}.
+S_d=\inf\lbrace x\ge2:P(x) < e^{\gamma_E}\kappa\log x\rbrace.
 $$
 
 Here $\gamma_E$ is Euler's constant and $\inf\varnothing=+\infty$. The two sides may be equal at the infimum. All unqualified logarithms are natural.
@@ -30,7 +30,7 @@ With $\psi_K(x)=\sum_{N\mathfrak p^j\le x}\log N\mathfrak p$, $j\ge1$, put $\Phi
 
 $$
 C=V/2-1+\tfrac12\log d-\log\pi-\gamma_E,\qquad
-b(u)=e^{-u/2}\{C-u-\log(1-e^{-2u})\}.
+b(u)=e^{-u/2}\lbrace C-u-\log(1-e^{-2u})\rbrace.
 $$
 
 On $u>0$ the prime ideal explicit formula in distributions reads
@@ -65,7 +65,7 @@ Here $1-\rho=\overline\rho$. Since $D=\Phi-b$ is locally integrable, $W$ is loca
 Let $A(x)=\sum_{q^j\le x}1/(jq^j)$, with $q=N\mathfrak p$. Define $E_A(u)=e^{u/2}u(A(e^u)-\log u-\gamma_E-\log\kappa)$. Stieltjes summation with $1/(x\log x)$ and the number-field Mertens theorem give, away from prime-power jumps,
 
 $$
-E_A(u)=\Phi(u)-\int_0^\infty e^{-t/2}a_u(t)\Phi(u+t)\,dt,\qquad
+E_A(u)=\Phi(u)-\int_0^\infty e^{-t/2}a_u(t)\Phi(u+t)\thinspace dt,\qquad
 a_u(t)=\frac{u}{u+t}+\frac{u}{(u+t)^2}.
 \tag{3}
 $$
@@ -73,8 +73,8 @@ $$
 This is the earlier argument's partial summation identity after the change of variables $x=e^u$. For $u\ge1$, $a_u(0)=1+1/u$, $0<a_u(t)\le2$ and $|a_u'(t)|\le3/u$. Substitute $D+b$ in (3), use $D=W'-W/2$, and integrate the derivative of $e^{-t/2}W(u+t)$. The terminal boundary term vanishes since $|W|\le V$. We obtain
 
 $$
-E_A(u)-Z(u)=\frac{W(u)}{u}+\int_0^\infty e^{-t/2}a'_u(t)W(u+t)\,dt
- +b(u)-\int_0^\infty e^{-t/2}a_u(t)b(u+t)\,dt .
+E_A(u)-Z(u)=\frac{W(u)}{u}+\int_0^\infty e^{-t/2}a'_u(t)W(u+t)\thinspace dt
+ +b(u)-\int_0^\infty e^{-t/2}a_u(t)b(u+t)\thinspace dt .
 $$
 
 In particular its absolute value is at most $7V/u+3e^{-u/2}(|C|+u+2)$. For the second term use $|b(v)|\le e^{-v/2}(|C|+v+1)$ for $v\ge1$ and integrate $(|C|+u+t+1)e^{-t}$. The correction for ideal powers satisfies $0\le e^{u/2}u(\log P(e^u)-A(e^u))\le48$ for $u\ge1$. This bound follows by splitting the ideals at $e^{u/2}$ and using $\sum_{q\le y}\log q\le8y$ as in §3 of the earlier proof. [Partial summation and prime-power correction](https://github.com/leecrossley/yokoi-mertens-explicit-upper-bound/blob/v1.0.0/PROOF.md)
@@ -102,13 +102,13 @@ For the last inequality use $\log2\ge2/3$ and $\log6<2$. The terms $2\log L$ can
 
 ## 4. Bringing the negative average back
 
-Take the $m$-fold convolution $k$ of the uniform probability density on $[-\delta/m,\delta/m]$. This nonnegative density is supported in $[-\delta,\delta]$. Its Fourier transform $w(\lambda)=\operatorname{sinc}(\delta\lambda/m)^m$ satisfies $|w|\le\min(1,(m/(\delta|\lambda|))^m)$, with $w(0)=1$. Write $Z_k(v)=\int k(u-v)Z(u)\,du$ for $v>\delta$. Its zero series is absolutely and uniformly convergent after multiplication by $w$. One may test (2) first against a smooth approximation to $k$, then pass to the limit by absolute convergence and local integrability. By (5), $Z_k(2\delta)<-80$.
+Take the $m$-fold convolution $k$ of the uniform probability density on $[-\delta/m,\delta/m]$. This nonnegative density is supported in $[-\delta,\delta]$. Its Fourier transform $w(\lambda)=\mathrm{sinc}(\delta\lambda/m)^m$ satisfies $|w|\le\min(1,(m/(\delta|\lambda|))^m)$, with $w(0)=1$. Write $Z_k(v)=\int k(u-v)Z(u)\thinspace du$ for $v>\delta$. Its zero series is absolutely and uniformly convergent after multiplication by $w$. One may test (2) first against a smooth approximation to $k$, then pass to the limit by absolute convergence and local integrability. By (5), $Z_k(2\delta)<-80$.
 
 For $|\lambda|>T=2m/\delta$, $|\rho|\le2|\lambda|$ and hence
 
 $$
 \sum_{|\lambda|>T}\frac{|w(\lambda)|}{|1-\rho|}
- \le 2VT\,2^{-m}<1 .
+ \le 2VT\thinspace2^{-m}<1 .
 \tag{6}
 $$
 
@@ -117,7 +117,7 @@ For an integer check on the last inequality put $k_0=\lceil\log_2 L\rceil$. Sinc
 We count the remaining frequencies with one evaluation of the completed zeta function. At $s=1/2+T$ each $|\lambda|\le T$ contributes at least $1/(2T)$ to $\Xi'(s)/\Xi(s)$. Its logarithmic derivative and the Euler product imply
 
 $$
-\#\{|\lambda|\le T\}\le2T\,\Xi'(s)/\Xi(s)
+\mathrm{card}\lbrace|\lambda|\le T\rbrace\le2T\thinspace\Xi'(s)/\Xi(s)
  \le 2T\bigl(2+\tfrac12\log d+\log(T+1)\bigr)\le N .
 \tag{7}
 $$
