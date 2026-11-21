@@ -104,7 +104,7 @@ For the last inequality use $\log2\ge2/3$ and $\log6<2$. The terms $2\log L$ can
 
 Take the $m$-fold convolution $k$ of the uniform probability density on $[-\delta/m,\delta/m]$. This nonnegative density is supported in $[-\delta,\delta]$. Its Fourier transform $w(\lambda)=\mathrm{sinc}(\delta\lambda/m)^m$ satisfies $|w|\le\min(1,(m/(\delta|\lambda|))^m)$, with $w(0)=1$. Write $Z_k(v)=\int k(u-v)Z(u)\thinspace du$ for $v>\delta$. Its zero series is absolutely and uniformly convergent after multiplication by $w$. One may test (2) first against a smooth approximation to $k$, then pass to the limit by absolute convergence and local integrability. By (5), $Z_k(2\delta)<-80$.
 
-For $|\lambda|>T=2m/\delta$, $|\rho|\le2|\lambda|$ and hence
+For $|\lambda|>T=2m/\delta$, $|\rho|^2\le2\lambda^2$ and hence
 
 $$
 \sum_{|\lambda|>T}\frac{|w(\lambda)|}{|1-\rho|}
