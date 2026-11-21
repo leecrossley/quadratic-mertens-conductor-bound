@@ -7,9 +7,9 @@ P(x)=\prod_{N\mathfrak p\le x}(1-1/N\mathfrak p)^{-1},\qquad
 S_d=\inf\lbrace x\ge2:P(x) < e^{\gamma_E}\kappa\log x\rbrace.
 $$
 
-Here $\gamma_E$ is Euler's constant and $\inf\varnothing=+\infty$. The two sides may be equal at the infimum. All unqualified logarithms are natural.
+Here $\gamma_E$ is Euler's constant and $\inf\varnothing=+\infty$. The infimum can equal 2 if the error is already negative there. The two sides may be equal at an interior infimum. The point of strict negative error constructed below has $x>e^{1000L}$, after the first ideal norm. All unqualified logarithms are natural.
 
-**Theorem.** The following integers give a point of strict negative error before $U(d)$ for every such field. In particular $S_d<U(d)$.
+**Theorem.** Assume the nontrivial zeros of $\zeta(s)L(s,\chi_d)$ have real part $1/2$ (GRH for this field). The following integers give a point of strict negative error before $U(d)$ for every such field. In particular $S_d<U(d)$.
 
 $$
 \begin{aligned}
@@ -130,4 +130,4 @@ On translating the average by $Jq$, the low terms change by at most $4\pi TV/Q\l
 
 Finally $m=O(\log L)$, $T=O(L^2\log L)$, $N=O(L^3\log L)$ and $\log Q=O(\log L)$. It follows directly that $\log\log U(d)=\log(4J\log2)+N\log Q=O(L^3(\log L)^2)$. This completes the bound.
 
-The displayed cutoff also improves the earlier one at each $d\ge5$. For a direct integer comparison, $L\le5d$, $m\le80L$, $N\le2^{270}L^4\le2^{280}d^4$ and $Q\le2^{281}d^4$. Thus $\lceil\log_2 Q\rceil\le281+4d\le61d$ and $\lceil\log_2(4J)\rceil\le15+d\le4d$. The integer $H=\lceil\log_2(4J)\rceil+N\lceil\log_2Q\rceil$ satisfies $U(d)\le2^{2^H}$ with $H<2^{287}d^5<d^{30000}$. At $d=5$, $H$ has 89 decimal digits, while $5^{30000}$ has 20,970. The numerical script checks these digit counts by exact integer inequalities.
+The displayed cutoff also improves the earlier one at each $d\ge5$. For a direct integer comparison, $L\le5d$, $m\le80L$, $N\le2^{270}L^4\le2^{280}d^4$ and $Q\le2^{281}d^4$. Thus $\lceil\log_2 Q\rceil\le281+4d\le61d$ and $\lceil\log_2(4J)\rceil\le15+d\le4d$. The integer $H=\lceil\log_2(4J)\rceil+N\lceil\log_2Q\rceil$ satisfies $U(d)\le2^{2^H}$ with $H<2^{287}d^5<d^{30000}$. For the earlier exact cutoff put $H_0=512+128\lceil\log_2 d\rceil$. Its double binary logarithm is $3+H_0(32H_0+9)2^{64H_0+9}>2^{64H_0}\ge2^{32768}d^{8192}>2^{287}d^5$. This compares the two cutoffs for every $d\ge5$. The new upper estimate, earlier exact integer and earlier simplified exponent have respectively 89, 17,273 and 20,970 decimal digits at $d=5$, and 90, 44,400 and 119,212 at $d=9413$. [Earlier exact formula](https://github.com/leecrossley/yokoi-mertens-explicit-upper-bound/blob/v1.0.0/PROOF.md)
