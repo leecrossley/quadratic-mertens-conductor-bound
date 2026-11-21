@@ -64,11 +64,17 @@ def main():
         log_upper = ceil_log2(4*j) + n*ceil_log2(q)
         assert log_upper.bit_length() < 30000*(d.bit_length()-1)
     print("7 exact parameter checks pass, including sizes on both sides of the conductor threshold")
-    ell, m, t, n, q, j = parameters(5)
-    inner = ceil_log2(4*j) + n*ceil_log2(q)
-    assert 10**88 <= inner < 10**89
-    assert 10**20969 <= 5**30000 < 10**20970
-    print("d=5: inner integer in the double power of two drops from 20,970 decimal digits to 89")
+    for d, counts in ((5, (89, 17273, 20970)), (9413, (90, 44400, 119212))):
+        ell, m, t, n, q, j = parameters(d)
+        new_upper = ceil_log2(4*j) + n*ceil_log2(q)
+        old_h = 512 + 128*ceil_log2(d)
+        old_exact = 3 + old_h*(32*old_h + 9)*2**(64*old_h + 9)
+        old_simple = d**30000
+        assert new_upper < 2**287*d**5 < 2**(64*old_h) < old_exact < old_simple
+        for value, digits in zip((new_upper, old_exact, old_simple), counts):
+            assert 10**(digits-1) <= value < 10**digits
+        print(f"d={d}: decimal digits in new upper estimate, earlier exact integer and simplified exponent: "
+              f"{counts[0]:,}, {counts[1]:,}, {counts[2]:,}")
 
 
 if __name__ == "__main__":

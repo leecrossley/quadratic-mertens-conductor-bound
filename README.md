@@ -2,7 +2,7 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24410800.svg)](https://doi.org/10.5281/zenodo.24410800)
 
-Daniel R. Johnston asked how far a number field's prime-ideal product can run ahead of the curve predicted by Mertens' theorem. This note gives a smaller explicit deadline for every real quadratic field, including every Yokoi field.
+Daniel R. Johnston asked how far a number field's prime-ideal product can run ahead of the curve predicted by Mertens' theorem. For each real quadratic field of discriminant $d$, the smaller deadline assumes that the nontrivial zeros of $\zeta(s)L(s,\chi_d)$ have real part $1/2$. Alpöge's announced Dirichlet GRH theorem supplies this hypothesis for both factors. [Announcement](https://alpo.ge/remark.pdf) [Formal verification](https://math.mit.edu/~drew/grh/)
 
 Let $d$ be the fundamental discriminant. Write $S_d$ for the first crossing, the infimum of the points $x\ge2$ at which the prime-ideal product falls strictly below $e^\gamma L(1,\chi_d)\log x$. There is a fully specified integer $U(d)$ with $S_d<U(d)$ and
 
@@ -10,7 +10,7 @@ $$
 \log\log U(d)\ll(\log d)^3(\log\log d)^2.
 $$
 
-In the earlier cutoff, the size after taking two logarithms grew like $d^{30000}$. Here it grows at most like the cube of the digit count times the square of its logarithm. The deadline is still far too large for a direct prime search. Whether a fixed power of $d$ always suffices remains open in these bounds. [Full proof and integer formula](PROOF.md) · [Earlier cutoff](https://github.com/leecrossley/yokoi-mertens-explicit-upper-bound/releases/tag/v1.0.0) · [Problem 8, pp. 4–5](https://arxiv.org/pdf/2407.03530#page=4)
+The earlier proof gave a sharper cutoff as well as the simplified double exponent $d^{30000}$. At $d=5$ the earlier exact double binary logarithm has 17,273 decimal digits, the simplified exponent has 20,970, and the new upper estimate has 89. The proof compares the exact cutoffs for every $d\ge5$. Here it grows at most like the cube of the digit count times the square of its logarithm. The deadline is still far too large for a direct prime search. Whether a fixed power of $d$ always suffices remains open in these bounds. [Full proof and integer formula](PROOF.md) [Earlier cutoff](https://github.com/leecrossley/yokoi-mertens-explicit-upper-bound/releases/tag/v1.0.0) [Problem 8, pp. 4–5](https://arxiv.org/pdf/2407.03530#page=4)
 
 ## Where the improvement comes from
 
