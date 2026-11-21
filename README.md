@@ -30,8 +30,10 @@ python3 -m pip install -r requirements.txt
 ./verify-release.sh
 ~~~
 
-The calculator takes a real quadratic fundamental discriminant, assumed as input, and prints the cutoff without expanding its exponent. The verification script checks the file manifest and reproduces the numerical output. To reproduce the four Lean checks, set `REPO` to the absolute checkout path and run the following from a Mathlib v4.33.1 checkout using Lean v4.33.1. [Mathlib revision](https://github.com/leanprover-community/mathlib4/tree/0df444a360eaa60ab8c11dca51a86af692955474)
+The calculator takes a real quadratic fundamental discriminant, assumed as input, and prints the cutoff without expanding its exponent. The verification script checks the file manifest and reproduces the numerical output.
+
+To compile the local Lean lemmas, pass a built Mathlib checkout to the same script. It checks the Mathlib and compiler commits, treats compiler warnings as errors, compares the printed axioms with the recorded sets and replays the compiled module through the kernel. [Pinned Mathlib revision](https://github.com/leanprover-community/mathlib4/tree/0df444a360eaa60ab8c11dca51a86af692955474)
 
 ~~~sh
-lake env lean -R "$REPO" "$REPO/ConductorBound.lean"
+./verify-release.sh /path/to/mathlib4
 ~~~
